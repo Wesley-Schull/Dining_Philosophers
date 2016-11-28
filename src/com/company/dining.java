@@ -22,11 +22,12 @@ class dining
         for(int i = 0; i < P.length; i++){
             threads[i] = new Thread(P[i]);
         }
-        for(Thread thread: threads) {
-            thread.join();
-            thread.start();
+        while(miscsubs.MAX_EATS > miscsubs.TotalEats){
+            for(Thread thread: threads) {
+                thread.join();
+                thread.start();
+            }
         }
-
 
 //        while(miscsubs.TotalEats < miscsubs.MAX_EATS){
 //            for(int i = 0; i < P.length; i++){
