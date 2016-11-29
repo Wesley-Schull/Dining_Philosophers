@@ -61,10 +61,15 @@ class miscsubs
         }
         int ycount = r.nextInt(900) + 100;
         System.out.println("Delay Timer:\t-\t" + ycount);
-        for (int i = 0; i < ycount; ++i)
-        {
+//        for (int i = 0; i < ycount; ++i)
+//        {
 //            System.out.println("Current wait:\t" + (ycount - i));
-            Thread.currentThread().yield();
-        }
+            //Thread.currentThread().yield();
+            try {
+                Thread.currentThread().sleep(ycount/10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+//        }
     }
 }
