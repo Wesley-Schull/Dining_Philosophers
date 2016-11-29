@@ -26,7 +26,7 @@ class miscsubs
     static synchronized void StartEating(int MyIndex)
     {
         // Un-comment below for debugging..
-        System.out.println("Philosopher " + MyIndex + " eating.\n");
+//        System.out.println("Philosopher " + MyIndex + " eating.\n");
         TotalEats++;
         EatCount[MyIndex]++;
         EatingLog[MyIndex] = true;
@@ -43,7 +43,7 @@ class miscsubs
     static synchronized void DoneEating(int MyIndex)
     {
         // The following System output is for debugging
-        System.out.println("Philosopher " + MyIndex + " stopped eating.\n");
+//        System.out.println("Philosopher " + MyIndex + " stopped eating.\n");
         EatingLog[MyIndex] = false;
     }
     static void LogResults()
@@ -60,10 +60,9 @@ class miscsubs
             r = new Random();
         }
         int ycount = r.nextInt(900) + 100;
-        System.out.println("Delay Timer:\t-\t" + ycount);
+//        System.out.println("Delay Timer:\t-\t" + ycount);
 //        for (int i = 0; i < ycount; ++i)
 //        {
-//            System.out.println("Current wait:\t" + (ycount - i));
             //Thread.currentThread().yield();
             try {
                 Thread.currentThread().sleep(ycount/10);
